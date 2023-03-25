@@ -2,20 +2,29 @@
 <html>
 
 <head>
-  <title>Event-Connect</title>
+  <title>EV Connect</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="website icon" type="png" href="ev logo.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
   <header>
-    <h1>Event-Connect</h1>
+    <h1>EV-Connect
+      <img src="ev logo.png" width="50px" height="50px">
+    </h1>
+
+    </p>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="#event-managers">Event Managers</a></li>
         <li><a href="vendors.html">Vendors</a></li>
         <li><a href="/contact us/">Contact Us</a></li>
@@ -43,11 +52,14 @@
       Overall, Event Connect is an invaluable tool for event planners and organizers who want to streamline the planning
       process and ensure a successful event. Our platform offers a simple, convenient, and stress-free way to find and
       book vendors, saving you time, money, and hassle.</p>
-
-
+    <p align='center'>
+    <h1>Looking for vendors for your event?</h1>
+    <a href="vendors.html" class="new">Click Here :)</a>
+    <br>
+    <hr width="10px">
+    </section>
     <section id="vendors">
       <h2>Vendors</h2>
-
       <ul>
 
         <li><button onclick="toggleHello2()">Florists</button></li>
@@ -155,26 +167,63 @@
 
         </li>
       </ul>
-      <!--           adding table for display -->
-      <!--       <table id="myTable">
-        <thead>
-          <tr>
-            <th>Vendor Name</th>
-            <th>Vendor Email</th>
-            <th>Vendor Phone no.</th>
-            <th>Vendor Type</th>
-          </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-      </table>
- -->
-
-      <!-------------------------------------------  -->
+      <br><br>
       <a href="form2.html" class="new">A vendor? want to join us?</a>
+      <br><br>
     </section>
+    <div class="container">
+      <h2>Previous Events</h2>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
 
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="images/2.png" style="width:100%;">
+          </div>
+
+          <div class="item">
+            <img src="images/3.png" style="width:100%;">
+          </div>
+
+          <div class="item">
+            <img src="images/4.png" style="width:100%;">
+          </div>
+
+          <div class="item">
+            <img src="images/5.png" style="width:100%;">
+          </div>
+
+          <div class="item">
+            <img src="images/6.png" style="width:100%;">
+          </div>
+
+          <div class="item">
+            <img src="images/7.png" style="width:100%;">
+          </div>
+
+          <div class="item">
+            <img src="images/8.png" style="width:100%;">
+          </div>
+
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
   </main>
 
   <footer>
@@ -226,7 +275,6 @@
       },
     });
 
-    // Get data from Firestore
     db.collection('vendors_db')
       .orderBy('createdAt', 'desc')
       .onSnapshot((querySnapshot) => {
@@ -312,7 +360,7 @@
         messageElement.style.display = "none";
       }
     }
-
+    
   </script>
 
 </body>
