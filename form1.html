@@ -1,79 +1,83 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>User Input Example</title>
-    <style>
-      #output {
-        font-size: 20px;
-        font-weight: bold;
-        margin-top: 20px;
-      }
-      .swiper-slide {
-        background-color: #f2f2f2;
-        padding: 10px;
-        margin-bottom: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <form>
-        <p>Please selct your work</p>
-        <input type="radio" id="florists" name="work">
-        <label for="Florists">Florists</label><br>
-        <input type="radio" id="Craters" name="work">
-        <label for="Craters">Craters</label><br>
-        <input type="radio" id="Photographers" name="work">
-        <label for="Photographers">Photographers</label><br>
-        <input type="radio" id="DJ services" name="work">
-        <label for="DJ services">DJ services</label><br>
-        <input type="radio" id="Evnet Decorators" name="work">
-        <label for="Evnet Decorators">Evnet Decorators</label><br>
-        <br>
 
-      <label for="fname">First name:</label><br>
-      <input type="text" id="fname" name="fname"><br>
-      <label for="lname">Last name:</label><br>
-      <input type="text" id="lname" name="lname"><br><br>
-      <label for="address">Address:</label><br>
-      <input type="text" id="address" name="address"><br><br>
-      <label for="contact">Phone Number:</label><br>
-      <input type="text" id="contact" name="contact"><br><br>
-      <button type="button" onclick="showOutput()">Submit</button>
-    </form>
-    <div id="output"></div>
-    <script>
-        function showOutput() {
-            const fname = document.getElementById("fname").value;
-            const lname = document.getElementById("lname").value;
-            const address = document.getElementById("address").value;
-            const contact = document.getElementById("contact").value;
-          
-            const newDiv = document.createElement("div");
-            newDiv.className = "swiper-slide";
-            newDiv.innerHTML = fname + " " + lname + "<br>" + address + "<br>" + contact + "<br>";
-          
-            fetch("index.html")
-              .then(response => response.text())
-              .then(html => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, "text/html");
-                const container = doc.querySelector("#container1");
-                container.appendChild(newDiv);
-          
-                const serializer = new XMLSerializer();
-                const newHtml = serializer.serializeToString(doc);
-          
-                const fs = require("fs");
-                fs.writeFile("index.html", newHtml, function (err) {
-                  if (err) throw err;
-                  console.log("index.html updated.");
-                });
-              })
-              .catch(error => {
-                console.error(error);
-              });
-          }
-          
-    </script>
-  </body>
+<head>
+  <title>User Input Example</title>
+  <style>
+    #output {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .swiper-slide {
+      background-color: #f2f2f2;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <p>Please selct your work</p>
+    <input type="radio" id="florists" name="work">
+    <label for="Florists">Florists</label><br>
+    <input type="radio" id="Craters" name="work">
+    <label for="Craters">Craters</label><br>
+    <input type="radio" id="Photographers" name="work">
+    <label for="Photographers">Photographers</label><br>
+    <input type="radio" id="DJ services" name="work">
+    <label for="DJ services">DJ services</label><br>
+    <input type="radio" id="Evnet Decorators" name="work">
+    <label for="Evnet Decorators">Evnet Decorators</label><br>
+    <br>
+
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname"><br><br>
+    <label for="address">Address:</label><br>
+    <input type="text" id="address" name="address"><br><br>
+    <label for="contact">Phone Number:</label><br>
+    <input type="text" id="contact" name="contact"><br><br>
+    <button type="button" onclick="showOutput()">Submit</button>
+  </form>
+  <div id="output"></div>
+  <script>
+    function showOutput() {
+      const fname = document.getElementById("fname").value;
+      const lname = document.getElementById("lname").value;
+      const address = document.getElementById("address").value;
+      const contact = document.getElementById("contact").value;
+
+      const newDiv = document.createElement("div");
+      newDiv.className = "swiper-slide";
+      newDiv.innerHTML = fname + " " + lname + "<br>" + address + "<br>" + contact + "<br>";
+
+      fetch("index.html")
+        .then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, "text/html");
+          const container = doc.querySelector("#container1");
+          container.appendChild(newDiv);
+
+          const serializer = new XMLSerializer();
+          const newHtml = serializer.serializeToString(doc);
+
+          const fs = require("fs");
+          fs.writeFile("index.html", newHtml, function (err) {
+            if (err) throw err;
+            console.log("index.html updated.");
+          });
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+
+  </script>
+</body>
+
 </html>

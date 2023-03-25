@@ -161,3 +161,17 @@ footer {
     scroll-snap-align: start;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
   }
+
+
+  .new {
+    display: flex;
+    gap: 0.625%;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    position: absolute;
+    left: 45%;
+    background-color: rgb(54, 83, 73);
+    padding: 10px;
+  }
+  
