@@ -2,10 +2,15 @@
 <html>
 
 <head>
-  <title>Party Vendor Registration Form</title>
+  <title>Newsletter subscription</title>
 
   <style>
+    body {
+      background-image: linear-gradient(to right, #434343 0%, black 100%);
+    }
+
     h1 {
+      color: white;
       align-items: center;
       text-align: center;
     }
@@ -14,7 +19,7 @@
       max-width: 600px;
       margin: 0 auto;
       padding: 20px;
-      background-color: #f2f2f2;
+      background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
       border-radius: 5px;
     }
 
@@ -52,51 +57,20 @@
 </head>
 
 <body>
-
-  <h1>Party Vendor Registration</h1>
+  <p align='center'>
+    <img src="socials/announcement.png" width="100px" height="100px" align='center'>
+  </p>
+  <h1>Newsletter subscription</h1>
   <form>
-    <label for="vendor_name">Vendor Name:</label>
-    <input type="text" id="vendor_name" name="vendor_name" required>
-
-    <label for="vendor_email">Email:</label>
-    <input type="email" id="vendor_email" name="vendor_email" required>
-
-    <label for="vendor_phone">Phone:</label>
-    <input type="text" id="vendor_phone" name="vendor_phone" required>
-    <label for='vendor_address'>Address: </label required>
-    <input type="text" id="vendor_address" name="vendor_address" required>
-    <label for="vendor_type">Vendor Type:</label>
-
-    <select id="vendor_type" name="vendor_type" required>
-      <option value="">--Select--</option>
-      <option value="caterer">Caterer</option>
-      <option value="decorator">Decorator</option>
-      <option value="entertainer">Entertainer</option>
-      <option value="photographer">Photographer</option>
-      <option value="rental">Rental</option>
-      <option value="other">Other</option>
-    </select>
-    <label for="vendor_image">Upload Image:(Optional)</label>
-    <input type="file" id="vendor_image" name="vendor_image">
-    <br><br>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="name">Email:</label>
+    <input type="email" id="email" name="email" required>
     <input type="submit" value="Submit">
-
   </form>
+
   <script>
-    const form = document.querySelector('form');
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      const databaseRef = ref(database, 'vendors');
-      push(databaseRef, Object.fromEntries(formData.entries()));
 
-      const formData = new FormData(form);
-      const response = await fetch('/api/vendor', {
-        method: 'POST',
-        body: formData
-      });
-      alert('Vendor registration successful.');
-
-    });
   </script>
   <script type="module">
     import {initializeApp} from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
@@ -125,7 +99,7 @@
 
       const formData = new FormData(form);
 
-      const databaseRef = ref(database, 'vendors_db');
+      const databaseRef = ref(database, 'newsltter_db');
 
       push(databaseRef, Object.fromEntries(formData.entries()));
 
@@ -134,7 +108,7 @@
         body: formData
       });
 
-      alert('Vendor registration successful!');
+      alert('Subscription confirmed!');
       form.reset();
 
     });
