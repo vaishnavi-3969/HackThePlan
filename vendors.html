@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vendor List</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+  <h2 align=center>Registered Vendors</h2>
+  <!--   <div class="container mt-3">
+    <table class="table table-dark">
+      <thead>
+        <th>Sr. No.</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Type</th>
+      </thead>
+      <tbody id="tbody1"></tbody>
+    </table>
+  </div>
+ -->
+  <div class="container mt-3">
+    <table class="table table-dark">
+      <thead>
+        <th>Sr. No.</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Type</th>
+      </thead>
+      <tbody id="vendorList">
+      </tbody>
+    </table>
+  </div>
+
+</body>
+
+<script type="module">
+  import {initializeApp} from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+  import {getFirestore, collection, onSnapshot} from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
+  import {getDatabase, ref, child, get, onValue} from "https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js";
+  var srno = 0;
+  const firebaseConfig = {
+    apiKey: "AIzaSyBBoWMteoxgPM8zaYpr2yyI4I1D0g63Ezg",
+    authDomain: "hacktheplan-55346.firebaseapp.com",
+    databaseURL: "https://hacktheplan-55346-default-rtdb.firebaseio.com",
+    projectId: "hacktheplan-55346",
+    storageBucket: "hacktheplan-55346.appspot.com",
+    messagingSenderId: "65660152625",
+    appId: "1:65660152625:web:4e6cfaf5330887de399e10",
+    measurementId: "G-HPTW77E8NX"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  const vendorList = document.querySelector("#vendorList");
+
+  onValue(ref(db, 'vendors_db'), (snapshot) => {
+    vendorList.innerHTML = '';
+    snapshot.forEach((childSnapshot) => {
+      const vendor = childSnapshot.val();
+      const row = `
+      <tr>
+        <td>${++srno}</td>
+        <td>${vendor.vendor_name}</td>
+        <td>${vendor.vendor_email}</td>
+        <td>${vendor.vendor_phone}</td>
+        <td>${vendor.vendor_address}</td>
+        <td>${vendor.vendor_type}</td>
+      </tr>
+    `;
+      vendorList.innerHTML += row;
+    });
+  });
+
+</script>
+
+</html>

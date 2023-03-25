@@ -20,11 +20,11 @@ registrationForm.addEventListener('submit', (event) => {
     })
   };
 
-  fetch('https://example.com/api/vendors', requestOptions)
-    .then(response => response.json())
-    .then(data => {
-      alert('Registration Successful!');
-      registrationForm.reset();
-    })
-    .catch(error => console.error(error));
-});
+//   fetch('https://example.com/api/vendors', requestOptions)
+//     .then(response => response.json())
+//     .then(data => {
+//       alert('Registration Successful!');
+//       registrationForm.reset();
+//     })
+//     .catch(error => console.error(error));
+// });

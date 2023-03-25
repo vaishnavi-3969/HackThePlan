@@ -1,108 +1,143 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Party Vendor Registration Form</title>
-	<style>
-    h1{
+  <title>Party Vendor Registration Form</title>
+
+  <style>
+    h1 {
       align-items: center;
       text-align: center;
     }
-		form {
-			max-width: 500px;
-			margin: 0 auto;
-			padding: 20px;
-			background-color: #f2f2f2;
-			border-radius: 5px;
-		}
-		label {
-			display: block;
-			font-size: 16px;
-			margin-bottom: 5px;
-		}
-		input[type="text"], input[type="email"], select {
-			width: 100%;
-			padding: 10px;
-			border-radius: 5px;
-			border: none;
-			margin-bottom: 10px;
-			font-size: 16px;
-		}
-		input[type="submit"] {
-			background-color: #4CAF50;
-			color: white;
-			padding: 12px 20px;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			font-size: 16px;
-		}
-		input[type="submit"]:hover {
-			background-color: #45a049;
-		}
-	</style>
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+
+    label {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
+
 <body>
 
   <h1>Party Vendor Registration</h1>
-	<form>
-		<label for="vendor_name">Vendor Name:</label>
-		<input type="text" id="vendor_name" name="vendor_name" required>
+  <form>
+    <label for="vendor_name">Vendor Name:</label>
+    <input type="text" id="vendor_name" name="vendor_name" required>
 
-		<label for="vendor_email">Email:</label>
-		<input type="email" id="vendor_email" name="vendor_email" required>
+    <label for="vendor_email">Email:</label>
+    <input type="email" id="vendor_email" name="vendor_email" required>
 
-		<label for="vendor_phone">Phone:</label>
-		<input type="text" id="vendor_phone" name="vendor_phone" required>
+    <label for="vendor_phone">Phone:</label>
+    <input type="text" id="vendor_phone" name="vendor_phone" required>
+    <label for='vendor_address'>Address: </label required>
+    <input type="text" id="vendor_address" name="vendor_address" required>
+    <label for="vendor_type">Vendor Type:</label>
 
-		<label for="vendor_type">Vendor Type:</label>
-		<select id="vendor_type" name="vendor_type" required>
-			<option value="">--Select--</option>
-			<option value="caterer">Caterer</option>
-			<option value="decorator">Decorator</option>
-			<option value="entertainer">Entertainer</option>
-			<option value="photographer">Photographer</option>
-			<option value="rental">Rental</option>
-			<option value="other">Other</option>
-		</select>
 
-		<input type="submit" value="Submit">
-	</form>
-	<script>
-		const form = document.querySelector('form');
-		form.addEventListener('submit', async (event) => {
-			event.preventDefault();
-			const formData = new FormData(form);
-			const response = await fetch('/api/vendor', {
-				method: 'POST',
-				body: formData
-			});
-			if (response.ok) {
-				alert('Vendor registration successful!');
-				form.reset();
-			} else {
-				alert('Vendor registration failed.');
-			}
-		});
-	</script>
+    <select id="vendor_type" name="vendor_type" required>
+      <option value="">--Select--</option>
+      <option value="caterer">Caterer</option>
+      <option value="decorator">Decorator</option>
+      <option value="entertainer">Entertainer</option>
+      <option value="photographer">Photographer</option>
+      <option value="rental">Rental</option>
+      <option value="other">Other</option>
+    </select>
+
+    <input type="submit" value="Submit">
+  </form>
+  <script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const databaseRef = ref(database, 'vendors');
+      push(databaseRef, Object.fromEntries(formData.entries()));
+
+      const formData = new FormData(form);
+      const response = await fetch('/api/vendor', {
+        method: 'POST',
+        body: formData
+      });
+      alert('Vendor registration successful.');
+
+    });
+  </script>
   <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
-  
-  const firebaseConfig = {
-    apiKey: "AIzaSyBBoWMteoxgPM8zaYpr2yyI4I1D0g63Ezg",
-    authDomain: "hacktheplan-55346.firebaseapp.com",
-    databaseURL: "https://hacktheplan-55346-default-rtdb.firebaseio.com",
-    projectId: "hacktheplan-55346",
-    storageBucket: "hacktheplan-55346.appspot.com",
-    messagingSenderId: "65660152625",
-    appId: "1:65660152625:web:4e6cfaf5330887de399e10",
-    measurementId: "G-HPTW77E8NX"
-  };
+    import {initializeApp} from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
+    import {getDatabase, ref, push} from "https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBBoWMteoxgPM8zaYpr2yyI4I1D0g63Ezg",
+      authDomain: "hacktheplan-55346.firebaseapp.com",
+      databaseURL: "https://hacktheplan-55346-default-rtdb.firebaseio.com",
+      projectId: "hacktheplan-55346",
+      storageBucket: "hacktheplan-55346.appspot.com",
+      messagingSenderId: "65660152625",
+      appId: "1:65660152625:web:4e6cfaf5330887de399e10",
+      measurementId: "G-HPTW77E8NX"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    // const analytics = getAnalytics(app);
+    const database = getDatabase(app);
+
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+
+      const databaseRef = ref(database, 'vendors_db');
+
+      push(databaseRef, Object.fromEntries(formData.entries()));
+
+      const response = await fetch('/api/vendor', {
+        method: 'POST',
+        body: formData
+      });
+
+      alert('Vendor registration successful!');
+      form.reset();
+
+    });
+  </script>
+
 </body>
+
 </html>
