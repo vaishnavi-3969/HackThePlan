@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Party Vendor Registration Form</title>
+	<style>
+		form {
+			max-width: 500px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #f2f2f2;
+			border-radius: 5px;
+		}
+		label {
+			display: block;
+			font-size: 16px;
+			margin-bottom: 5px;
+		}
+		input[type="text"], input[type="email"], select {
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			margin-bottom: 10px;
+			font-size: 16px;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+		input[type="submit"]:hover {
+			background-color: #45a049;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<label for="vendor_name">Vendor Name:</label>
+		<input type="text" id="vendor_name" name="vendor_name" required>
+
+		<label for="vendor_email">Email:</label>
+		<input type="email" id="vendor_email" name="vendor_email" required>
+
+		<label for="vendor_phone">Phone:</label>
+		<input type="text" id="vendor_phone" name="vendor_phone" required>
+
+		<label for="vendor_type">Vendor Type:</label>
+		<select id="vendor_type" name="vendor_type" required>
+			<option value="">--Select--</option>
+			<option value="caterer">Caterer</option>
+			<option value="decorator">Decorator</option>
+			<option value="entertainer">Entertainer</option>
+			<option value="photographer">Photographer</option>
+			<option value="rental">Rental</option>
+			<option value="other">Other</option>
+		</select>
+
+		<input type="submit" value="Submit">
+	</form>
+	<script>
+		const form = document.querySelector('form');
+		form.addEventListener('submit', async (event) => {
+			event.preventDefault();
+			const formData = new FormData(form);
+			const response = await fetch('/api/vendor', {
+				method: 'POST',
+				body: formData
+			});
+			if (response.ok) {
+				alert('Vendor registration successful!');
+				form.reset();
+			} else {
+				alert('Vendor registration failed.');
+			}
+		});
+	</script>
+</body>
+</html>
