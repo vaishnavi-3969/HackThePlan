@@ -1,36 +1,9 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>EV Connect</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link rel="website icon" type="png" href="ev logo.png">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
+<div id='header'></div>
 
 <body>
-  <header>
-    <h1>EV-Connect
-      <img src="ev logo.png" width="50px" height="50px">
-    </h1>
 
-    </p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="events.html">Event Updates</a></li>
-        <li><a href="vendors.html">Vendors</a></li>
-        <li><a href="/contact us/">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
   <img class="images" alt="event-connect" src="ev.png">
   <main>
     <h1>Welcome Event Managers!</h1>
@@ -171,6 +144,8 @@
       <a href="form2.html" class="new">A vendor? want to join us?</a>
       <br><br>
     </section>
+
+
     <div class="container">
       <h2>Previous Events</h2>
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -225,33 +200,28 @@
       </div>
     </div>
   </main>
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/641f805d4247f20fefe7f8a6/1gsdgqs3v';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
 
-  <footer>
-    <div>
-      <h3>Want to get the latest updates?</h3>
-      <a href="newsletter.html" class="new">Subscribe to our newsletter</a>
-      <br><br>
-      <div id="contact-us" align='center'>
-        <!--       whatsapp -->
-        <img src="socials/whatsapp.png" alt="whatsapp logo" width="25px" height="25px"><a
-          href="http://wa.me/+919392532515">Whatsapp<br><br></a>
-        <!--       phone call -->
-        <img src="socials/phonecall.png" alt="phone logo" width="25px" height="25px">
-        <a href="tel:9392532515">Phone<br><br></a>
-        <!--       facebook -->
-        <img src="socials/facebook.png" alt="facebook logo" width="25px" height="25px">
-        <a href="#">Facebook<br><br></a>
-        <!--       instagram -->
-        <img src="socials/instagram.png" alt="instagram logo" width="25px" height="25px">
-        <a href="https://www.instagram.com/m_a_da_n_/?igshid=ZDdkNTZiNTM%3D">Instagram<br><br></a>
-        <!--     gmail -->
-        <img src="socials/gmail.png" alt="instagram logo" width="25px" height="25px">
-        <a href="mailto:vaishnavi.kale3011@gmail.com">Gmail<br><br></a>
-        <p>&copy; 2023 Event-Connect. All Rights Reserved.</p>
-      </div>
-  </footer>
-
-  <!--  -->
+  <!--   <script src="//code.tidio.co/hsnhvbclcg8aaalukoyrppnolalhe0t8.js" async></script> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function () {
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+    });
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js">
 
   </script>
@@ -299,8 +269,8 @@
           const swiperSlide = document.createElement('div');
           swiperSlide.classList.add('swiper-slide');
           swiperSlide.innerHTML = `
-        <h2>${item.title}</h2>
-        <p>${item.description}</p>
+    <h2>${item.title}</h2>
+    <p>${item.description}</p>
       `;
           swiperWrapper.appendChild(swiperSlide);
         });
@@ -378,5 +348,6 @@
   </script>
 
 </body>
+<div id='footer'></div>
 
 </html>
