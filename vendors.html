@@ -63,7 +63,7 @@
 
   const vendorList = document.querySelector("#vendorList");
 
-  onValue(ref(db, 'vendors_db'), (snapshot) => {
+  onValue(ref(db, 'vendor_db'), (snapshot) => {
     vendorList.innerHTML = '';
     snapshot.forEach((childSnapshot) => {
       const vendor = childSnapshot.val();

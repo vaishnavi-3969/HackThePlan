@@ -132,7 +132,7 @@
 
       const formData = new FormData(form);
 
-      const databaseRef = ref(database, 'vendors_db');
+      const databaseRef = ref(database, 'vendor_db');
 
       push(databaseRef, Object.fromEntries(formData.entries()));
 
