@@ -29,3 +29,6 @@ Additionally, Event-Connect provides robust communication tools that enable even
 
 ## Microsoft Azure
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/80088403/227761871-ad919cf0-97b5-48e1-b07d-1087da464fba.png">
+
+## Loom Vide:
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/fcdc7dc410ad460eb33d1537b0a8ec6b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
