@@ -1,3 +1,7 @@
+# Winner - 1st place at HackThePlan organized by MLH
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/80088403/227786212-3bfe49c3-77d6-4731-9bea-49e17c9af9fd.png">
+
+
 # HackThePlan
 Hack The Plan || EV-Connect: For event, party organizers and vendors
 <br>
@@ -37,3 +41,5 @@ Additionally, Event-Connect provides robust communication tools that enable even
 ## Loom Vide0:
 EV-Connect - Watch Video
 https://www.loom.com/embed/fcdc7dc410ad460eb33d1537b0a8ec6b
+
+
