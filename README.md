@@ -1,7 +1,7 @@
 # HackThePlan
 Hack The Plan || EV-Connect: For event, party organizers and vendors
 <br>
-<p align='center'
+<p align='center'>
 <img width="203" alt="image" src="https://user-images.githubusercontent.com/80088403/227764843-bbf73252-b84a-44c4-9ce6-b1525da35603.png">
 </p>
 <br>
