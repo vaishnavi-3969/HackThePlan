@@ -1,7 +1,9 @@
 # HackThePlan
 Hack The Plan || EV-Connect: For event, party organizers and vendors
 <br>
+<p align='center'
 <img width="203" alt="image" src="https://user-images.githubusercontent.com/80088403/227764843-bbf73252-b84a-44c4-9ce6-b1525da35603.png">
+</p>
 <br>
 Event-Connect is a cutting-edge platform that leverages the latest in digital technology to facilitate seamless connections between event managers and vendors. By utilizing advanced algorithms and state-of-the-art search capabilities, the platform empowers event organizers to easily and efficiently search for and connect with vendors that meet their specific needs and requirements.
 Through its intuitive user interface, vendors are able to easily register and showcase their offerings to a broad audience of potential clients. This streamlined process enables event planners to easily identify and evaluate vendors, saving them valuable time and resources.
