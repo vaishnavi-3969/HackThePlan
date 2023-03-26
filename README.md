@@ -32,5 +32,6 @@ Additionally, Event-Connect provides robust communication tools that enable even
 
 ## Loom Vide0:
 EV-Connect - Watch Video
+<p>
 <iframe width="640" height="360" src="https://www.loom.com/embed/fcdc7dc410ad460eb33d1537b0a8ec6b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
+</p>
