@@ -14,11 +14,12 @@ Hack The Plan || EV-Connect: For event, party organizers and vendors
 Event-Connect is a cutting-edge platform that leverages the latest in digital technology to facilitate seamless connections between event managers and vendors. By utilizing advanced algorithms and state-of-the-art search capabilities, the platform empowers event organizers to easily and efficiently search for and connect with vendors that meet their specific needs and requirements.
 Through its intuitive user interface, vendors are able to easily register and showcase their offerings to a broad audience of potential clients. This streamlined process enables event planners to easily identify and evaluate vendors, saving them valuable time and resources.
 Additionally, Event-Connect provides robust communication tools that enable event planners to quickly and easily communicate with vendors and manage their event planning workflow all from within a single, centralized platform. This results in a more efficient and effective event planning process, with less time spent on administrative tasks and more time focused on creating unforgettable events.
-
-## Deployed website: https://victorious-flower-047e73d10.2.azurestaticapps.net/
+<br/><br/><hr/>
+<p>Deployed website:  <a href = https://victorious-flower-047e73d10.2.azurestaticapps.net/>https://victorious-flower-047e73d10.2.azurestaticapps.net/</a></p>
 <br>
-## Github Pages: https://vaishnavi-3969.github.io/HackThePlan/
-### Website:
+<p>Github Pages: <a href = "https://vaishnavi-3969.github.io/HackThePlan/">https://vaishnavi-3969.github.io/HackThePlan/</a></p>
+
+<h2>Website:</h2>
 
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/80088403/227761774-fad6d661-8825-4b13-9682-6348548be835.png">
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/80088403/227761782-c8b91885-c213-489f-a54f-fdba0295c8f2.png">
