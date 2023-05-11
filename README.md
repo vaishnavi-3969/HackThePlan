@@ -40,7 +40,7 @@ Additionally, Event-Connect provides robust communication tools that enable even
 
 ## Microsoft Azure
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/80088403/227761871-ad919cf0-97b5-48e1-b07d-1087da464fba.png">
-
+<img width="960" alt="image" src="https://github.com/vaishnavi-3969/HackThePlan/assets/80088403/875c9fce-c309-4000-a479-bb4451fd7d82">
 ## Loom Vide0:
 EV-Connect - Watch Video
 https://www.loom.com/embed/fcdc7dc410ad460eb33d1537b0a8ec6b
